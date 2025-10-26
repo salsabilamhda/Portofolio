@@ -7,17 +7,19 @@
   scroll-behavior: smooth;
 }
 
-/* ==== PALET WARNA PUTIH-BIRU ==== */
+/* ==== PALET WARNA PUTIH-TEAL ==== */
 :root {
-  --bg-primary: #FFFFFF;      /* Latar belakang utama */
-  --bg-secondary: #FFFFFF;    /* Latar belakang kartu */
-  --accent-color: #007BFF;    /* Warna aksen biru cerah */
-  --text-primary: #222222;    /* Teks utama */
-  --text-secondary: #666666;  /* Teks sekunder */
-  --border-light: #EEEEEE;    /* Warna border lembut */
-  --bg-light: #F8F8F8;        /* Warna latar abu muda */
+  --bg-primary: #FFFFFF;       /* Latar belakang utama */
+  --bg-secondary: #FFFFFF;     /* Latar belakang kartu */
+  --accent-color: #0A545B;     /* Warna aksen teal gelap */
+  --accent-light: #12737C;     /* Aksen lebih terang */
+  --text-primary: #222222;     /* Warna teks utama */
+  --text-secondary: #555555;   /* Warna teks sekunder */
+  --border-light: #E5E5E5;     /* Warna border lembut */
+  --bg-light: #F7F9FA;         /* Warna latar lembut */
 }
 
+/* ==== BODY ==== */
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
@@ -84,45 +86,51 @@ section {
   z-index: 1000;
   background: var(--bg-primary);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.header.scrolled {
-  background: #fff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .header nav.container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* LOGO kiri, MENU kanan */
   align-items: center;
   height: 70px;
-  padding: 0 30px;
+  padding: 0 40px;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* agar tetap center di layar besar */
 }
 
+/* Logo di kiri */
 .logo {
   font-size: 28px;
   font-weight: 700;
   color: var(--accent-color);
   text-decoration: none;
+  letter-spacing: 1px;
 }
 
+/* Menu navigasi di kanan */
 .nav-links {
   display: flex;
+  align-items: center;
   list-style: none;
 }
 
 .nav-links li {
-  margin-left: 25px;
+  margin-left: 30px;
 }
 
 .nav-links a {
   color: var(--text-primary);
   text-decoration: none;
   font-weight: 500;
-  position: relative;
   padding-bottom: 5px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-color);
 }
 
 .nav-links a::after {
@@ -140,6 +148,7 @@ section {
 .nav-links a.active::after {
   width: 100%;
 }
+
 
 /* ==== HERO SECTION ==== */
 .hero {
@@ -233,7 +242,7 @@ section {
   max-width: 300px;
   border: 5px solid var(--accent-color);
   border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+  box-shadow: 0 0 20px rgba(10, 84, 91, 0.3);
 }
 
 .about-text h3 {
@@ -248,40 +257,65 @@ section {
   line-height: 1.7;
 }
 
-/* ==== SKILLS ==== */
+
+/* === Skills Section === */
+.skills {
+  text-align: center;
+  padding: 80px 0;
+  background-color: var(--bg-primary);
+}
+
+.skills .section-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: var(--accent-color);
+  font-weight: 700;
+}
+
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 25px;
+  justify-items: center;
 }
 
 .skill-box {
   background: var(--bg-secondary);
-  padding: 25px;
-  border-radius: 10px;
-  text-align: center;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   transition: all 0.3s ease;
+}
+
+.skill-box i {
+  font-size: 40px;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.skill-box span {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .skill-box:hover {
   transform: translateY(-5px);
-  border-color: var(--accent-color);
-  box-shadow: 0 0 15px rgba(0, 123, 255, 0.2);
+  background-color: var(--accent-color);
+  color: #fff;
 }
 
-.skill-box i {
-  font-size: 50px;
-  color: var(--accent-color);
+.skill-box:hover i,
+.skill-box:hover span {
+  color: #fff;
 }
 
-.skill-box span {
-  display: block;
-  margin-top: 15px;
-  font-weight: 500;
-  font-size: 16px;
-  color: var(--text-primary);
-}
 
 /* ==== PROJECTS ==== */
 .project-grid {
@@ -304,7 +338,7 @@ section {
 .project-card:hover {
   transform: scale(1.03);
   border-color: var(--accent-color);
-  box-shadow: 0 0 20px rgba(0, 123, 255, 0.2);
+  box-shadow: 0 0 20px rgba(10, 84, 91, 0.2);
 }
 
 .project-image-wrapper {
@@ -381,7 +415,7 @@ section {
 
 .extra-images img:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+  box-shadow: 0 0 15px rgba(10, 84, 91, 0.4);
 }
 
 .extra-text {
