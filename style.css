@@ -89,14 +89,13 @@ section {
 }
 
 .header nav.container {
-  display: flex;
-  justify-content: space-between; /* LOGO kiri, MENU kanan */
-  align-items: center;
-  height: 70px;
-  padding: 0 40px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto; /* agar tetap center di layar besar */
+    display: flex;
+    justify-content: space-between; /* Ini akan mendorong logo ke kiri & menu ke kanan */
+    align-items: center;
+    height: 70px;
+    padding: 0 40px; /* Ini memberi jarak 40px dari tepi layar */
+    width: 100%;
+  /* Baris max-width dan margin dihapus */
 }
 
 /* Logo di kiri */
