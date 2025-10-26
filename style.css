@@ -94,12 +94,17 @@ section {
   backdrop-filter: blur(8px);
 }
 
-nav.container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 70px;
-  padding: 0 40px;
+.header nav.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    
+    /* --- Overrides --- */
+    max-width: none;  /* Menghapus batas lebar 1100px */
+    margin: 0;        /* Menghapus margin auto (centering) */
+    padding: 0 30px;  /* Memberi padding 30px dari tepi browser */
+    width: 100%;      /* Memastikan lebar penuh */
 }
 
 .logo {
