@@ -151,6 +151,7 @@ section {
     min-height: 90vh;
     position: relative; 
     overflow: hidden; 
+    /* Hapus background hijau gelap dari sini, sekarang diatur di <body> */
 }
 
 #particles-js {
@@ -208,7 +209,7 @@ section {
 }
 
 .hero-socials a:hover {
-    color: var(--text-primary); /* Hover becomes Dark Text (better contrast on white) */
+    color: var(--text-primary); 
     transform: scale(1.2);
 }
 
@@ -254,7 +255,6 @@ section {
     width: 100%;
     max-width: 300px;
     border: 5px solid var(--accent-color);
-    /* Adjusted shadow for a lighter background */
     box-shadow: 0 0 20px rgba(22, 66, 60, 0.2); 
     border-radius: 10px; 
 }
@@ -283,19 +283,17 @@ section {
 }
 
 .skill-box {
-    /* Use lighter secondary background for skills box */
     background: var(--bg-secondary); 
     padding: 25px;
     border-radius: 10px;
     text-align: center;
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.1); /* Light border on light BG */
+    border: 1px solid rgba(0, 0, 0, 0.1); 
 }
 
 .skill-box:hover {
     transform: translateY(-5px);
     border-color: var(--accent-color);
-    /* Adjusted shadow for a lighter background */
     box-shadow: 0 5px 15px rgba(22, 66, 60, 0.2); 
 }
 
@@ -320,7 +318,6 @@ section {
 }
 
 .project-card {
-    /* Use lighter secondary background for project cards */
     background: var(--bg-secondary);
     border-radius: 10px;
     overflow: hidden; 
@@ -334,13 +331,11 @@ section {
 .project-card:hover {
     transform: scale(1.03); 
     border-color: var(--accent-color);
-    /* Adjusted shadow for a lighter background */
     box-shadow: 0 0 20px rgba(22, 66, 60, 0.2); 
 }
 
 .project-image-wrapper {
     padding: 20px;
-    /* Image wrapper color should be primary background to show the image clearly */
     background: var(--bg-primary); 
     overflow: hidden; 
 }
@@ -360,13 +355,10 @@ section {
     transform: scale(1.03); 
 }
 
-/* Jarak atas section sertifikat */
-/* Menambah jarak di atas section "Certifications & Training" */
 #certificates {
     margin-top: 120px; 
 }
 
-/* Optional: Sedikit mengurangi padding bawah section sebelumnya (Projects) */
 #projects {
       padding-bottom: 60px; 
 }
@@ -386,7 +378,6 @@ section {
 }
 
 .project-card:hover .project-content h3 {
-    /* Hover text is still dark green, but text-primary is dark gray/black now */
     color: var(--accent-color); 
 }
 
@@ -410,7 +401,7 @@ section {
 
 .project-links a:hover {
     background: var(--accent-color);
-    color: var(--bg-primary); /* Hover background is Dark Green, text is White */
+    color: var(--bg-primary); 
 }
 
 .project-links a i {
@@ -435,7 +426,6 @@ section {
     height: 250px; 
     object-fit: cover; 
     border-radius: 10px; 
-    /* Changed border color to the lighter accent color for contrast on white */
     border: 3px solid var(--accent-color); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -514,11 +504,10 @@ section {
     padding: 12px;
     margin-bottom: 15px;
     border-radius: 8px;
-    /* Use lighter secondary background for form fields */
     background: var(--bg-secondary); 
     color: var(--text-primary);
     font-family: 'Poppins', sans-serif;
-    border: 2px solid rgba(0, 0, 0, 0.15); /* Light border */
+    border: 2px solid rgba(0, 0, 0, 0.15); 
 }
 
 .contact-form input:focus,
@@ -535,7 +524,7 @@ section {
 .footer {
     text-align: center;
     padding: 30px;
-    background: var(--bg-secondary); /* Use secondary background for footer */
+    background: var(--bg-secondary); 
     color: var(--text-secondary);
     font-size: 14px;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
