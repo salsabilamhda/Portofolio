@@ -279,11 +279,12 @@ section {
   margin-bottom: 15px;
 }
 
-/* ==== SKILLS ==== */
+
 .skills {
-  text-align: center;
-  background: var(--bg-primary);
+    text-align: left; /* Diubah dari center ke left */
+    background: var(--bg-primary);
 }
+/* Biarkan sisanya sama */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -369,17 +370,29 @@ section {
 }
 
 /* REVISI JARAK SECTION: PROJECTS & CERTIFICATES */
-/* Meningkatkan jarak atas untuk section Certificates agar tidak mepet dengan Projects */
 #certificates {
-    /* Meningkatkan padding atas dari default 100px menjadi 130px (atau 150px jika ingin lebih jauh) */
-    padding-top: 130px; 
+    /* Mengurangi jarak agar tidak terlalu jauh */
+    padding-top: 100px; /* Kembali ke nilai default atau sedikit di atasnya */
 }
 
-/* ==== ACTIVITIES (REVISED: More About Me) ==== */
+
 .extracurricular {
-    text-align: center; /* Memastikan judul di tengah */
-    padding-bottom: 50px; /* Sedikit padding di bawah */
+    text-align: left; /* Diubah dari center ke left */
+    padding-bottom: 50px; 
 }
+
+/* Juga ubah teks di bawah gambar agar rata kiri */
+.extra-text {
+    max-width: 900px;
+    margin: 40px 0 0 0; /* Diubah dari margin: 40px auto 0 auto menjadi rata kiri */
+    padding: 0 10px;
+    line-height: 1.7;
+    color: var(--text-secondary); 
+    font-size: 17px;
+    text-align: left; /* Diubah dari center ke left */
+    font-weight: 400;
+}
+/* Biarkan sisanya sama */
 
 .extra-images {
     /* Mengubah grid menjadi 4 kolom untuk desktop, dengan lebar minimum 200px */
@@ -469,6 +482,71 @@ section {
     color: var(--accent-color); /* Memastikan teks tetap warna aksen */
     margin: 0; /* Hapus margin default pada paragraf */
     font-size: 16px;
+}
+
+/* ==== CONTACT (REVISI FORM) ==== */
+
+/* Biarkan .contact-content dan .contact-info seperti sebelumnya */
+
+/* Styling Form secara umum */
+.contact-form {
+    /* Menampung elemen form */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container untuk 3 input sebaris (nama, email, subjek) */
+.contact-form .input-group {
+    display: flex;
+    gap: 12px; /* Jarak antar input sebaris */
+    margin-bottom: 12px; /* Jarak dari input group ke textarea */
+}
+
+/* Styling untuk semua input dan textarea */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid var(--border-light); /* Kembali ke border rapi */
+    background: var(--bg-light); 
+    color: var(--text-primary);
+    font-family: inherit;
+    /* Margin-bottom hanya berlaku untuk textarea karena input diurus oleh .input-group */
+    margin-bottom: 0; 
+}
+
+/* Memastikan input di dalam input-group memiliki lebar yang sama */
+.contact-form .input-group input {
+    flex-grow: 1; /* Agar membagi lebar secara merata */
+}
+
+.contact-form textarea {
+    margin-bottom: 12px; /* Jarak di bawah textarea */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+}
+
+/* Tombol CTA di Contact */
+.contact-form .cta-button {
+    /* Pastikan tombol tetap rata kiri/default layout */
+    align-self: flex-start; 
+}
+
+/* Responsive untuk input group (kembali ke 1 kolom di mobile) */
+@media (max-width: 600px) {
+    .contact-form .input-group {
+        flex-direction: column; /* Ubah menjadi kolom di layar kecil */
+        gap: 0;
+        margin-bottom: 0;
+    }
+    .contact-form .input-group input {
+        margin-bottom: 12px; /* Tambahkan margin bawah pada input individual di mobile */
+    }
 }
 
 /* ==== FOOTER ==== */

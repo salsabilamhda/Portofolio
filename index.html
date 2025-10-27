@@ -374,9 +374,11 @@
                     </div>
                 </div>
                 <form class="contact-form" action="https://formspree.io/f/xovpaggp" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <input type="text" name="subject" placeholder="Subject" required>
+                    <div class="input-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <input type="text" name="subject" placeholder="Subject" required>
+                    </div>
                     <textarea name="message" placeholder="Your Message..." rows="6" required></textarea>
                     <button type="submit" class="cta-button">Send Message</button>
                 </form>
