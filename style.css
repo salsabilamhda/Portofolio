@@ -29,11 +29,14 @@ body {
 }
 
 section {
-    padding: 120px 0;
+    /* PERBAIKAN SCROLL: Mengurangi padding-top dan menambahkan scroll-margin-top */
+    padding: 60px 0 120px 0; 
     min-height: 90vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* Ini adalah kunci perbaikan: memberi ruang di bawah fixed navbar saat navigasi */
+    scroll-margin-top: 80px; 
 }
 
 .section-title {
@@ -42,6 +45,7 @@ section {
     text-align: left;
     margin-bottom: 50px;
     position: relative;
+    margin-top: 0; /* Memastikan judul tidak terlalu turun ke bawah */
 }
 
 .section-title::after {
@@ -56,7 +60,7 @@ section {
 .cta-button {
     display: inline-block;
     background: var(--accent-color);
-    color: var(--bg-primary);
+    color: var(--bg-primary); /* Button Text is White */
     padding: 10px 25px;
     border-radius: 8px;
     text-decoration: none;
@@ -151,7 +155,6 @@ section {
     min-height: 90vh;
     position: relative; 
     overflow: hidden; 
-    /* Hapus background hijau gelap dari sini, sekarang diatur di <body> */
 }
 
 #particles-js {
@@ -171,7 +174,6 @@ section {
 .hero-content h1 {
     font-size: 60px; 
     color: var(--text-primary);
-    /* Mengubah gradient agar terlihat di background putih */
     background: linear-gradient(90deg, var(--text-primary), var(--accent-color));
     -webkit-background-clip: text;
     background-clip: text;
@@ -356,11 +358,11 @@ section {
 }
 
 #certificates {
-    margin-top: 120px; 
+    margin-top: 0; /* Dihapus karena section sudah punya padding & scroll-margin */
 }
 
 #projects {
-      padding-bottom: 60px; 
+    padding-bottom: 120px; /* Dikembalikan ke padding default section */
 }
 
 
