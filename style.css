@@ -34,6 +34,8 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    /* --- PERBAIKAN UTAMA: MEMBERI RUANG UNTUK FIXED HEADER (70px) --- */
+    scroll-margin-top: 80px; /* Nilai harus lebih besar dari tinggi header (70px) */
 }
 
 .section-title {
