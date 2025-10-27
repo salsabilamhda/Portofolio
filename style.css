@@ -8,11 +8,13 @@
 }
 
 :root {
-    --bg-primary: #16423C;
-    --bg-secondary: #16423C;
-    --accent-color: #6A9C89;
-    --text-primary: #E9EFEC;
-    --text-secondary: #C4DAD2;
+    /* --- NEW LIGHT THEME COLORS --- */
+    --bg-primary: #FFFFFF;         /* Main Background: White */
+    --bg-secondary: #F0F5F2;       /* Secondary Background (Cards, inputs): Light Gray/Greenish */
+    --accent-color: #16423C;       /* Main Accent: Dark Green (Element Hijau) */
+    --text-primary: #212529;       /* Main Text: Dark Gray/Black */
+    --text-secondary: #495057;     /* Secondary Text: Medium Gray */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Light Shadow for white background */
 }
 
 body {
@@ -54,7 +56,7 @@ section {
 .cta-button {
     display: inline-block;
     background: var(--accent-color);
-    color: var(--bg-primary);
+    color: var(--bg-primary); /* Button Text is White */
     padding: 10px 25px;
     border-radius: 8px;
     text-decoration: none;
@@ -78,13 +80,13 @@ section {
     width: 100%;
     z-index: 1000;
     background: var(--bg-primary);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 10px var(--shadow-color); /* Light Shadow */
     transition: background 0.3s ease;
 }
 
 .header.scrolled {
-    background: #113832;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    background: var(--bg-primary); 
+    box-shadow: 0 4px 15px var(--shadow-color);
 }
 
 .header nav.container {
@@ -115,7 +117,7 @@ section {
 }
 
 .nav-links a {
-    color: var(--text-primary);
+    color: var(--text-primary); /* Nav Links are Dark Text */
     text-decoration: none;
     font-weight: 500;
     position: relative;
@@ -146,7 +148,6 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
-    /* padding-top: 70px;  <- HAPUS BARIS INI (atau ubah jadi 0) */
     min-height: 90vh;
     position: relative; 
     overflow: hidden; 
@@ -167,25 +168,24 @@ section {
 }
 
 .hero-content h1 {
-    font-size: 60px; /* Diperbesar dari 52px */
+    font-size: 60px; 
     color: var(--text-primary);
+    /* Mengubah gradient agar terlihat di background putih */
     background: linear-gradient(90deg, var(--text-primary), var(--accent-color));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-/* GANTI BLOK INI */
 .hero-content h3 {
-    font-size: 32px; /* Diperbesar dari 28px */
+    font-size: 32px;
     font-weight: 500;
     color: var(--accent-color);
     margin: 10px 0;
 }
 
-/* GANTI BLOK INI */
 .hero-content p {
-    font-size: 20px; /* Diperbesar dari 18px */
+    font-size: 20px;
     color: var(--text-secondary);
     margin-bottom: 30px;
 }
@@ -208,7 +208,7 @@ section {
 }
 
 .hero-socials a:hover {
-    color: var(--text-primary);
+    color: var(--text-primary); /* Hover becomes Dark Text (better contrast on white) */
     transform: scale(1.2);
 }
 
@@ -254,7 +254,8 @@ section {
     width: 100%;
     max-width: 300px;
     border: 5px solid var(--accent-color);
-    box-shadow: 0 0 20px rgba(106, 156, 137, 0.5);
+    /* Adjusted shadow for a lighter background */
+    box-shadow: 0 0 20px rgba(22, 66, 60, 0.2); 
     border-radius: 10px; 
 }
 
@@ -282,18 +283,20 @@ section {
 }
 
 .skill-box {
-    background: var(--bg-secondary);
+    /* Use lighter secondary background for skills box */
+    background: var(--bg-secondary); 
     padding: 25px;
     border-radius: 10px;
     text-align: center;
     transition: all 0.3s ease;
-    border: 1px solid var(--text-secondary);
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Light border on light BG */
 }
 
 .skill-box:hover {
     transform: translateY(-5px);
     border-color: var(--accent-color);
-    box-shadow: 0 0 15px rgba(106, 156, 137, 0.3);
+    /* Adjusted shadow for a lighter background */
+    box-shadow: 0 5px 15px rgba(22, 66, 60, 0.2); 
 }
 
 .skill-box i {
@@ -317,12 +320,13 @@ section {
 }
 
 .project-card {
+    /* Use lighter secondary background for project cards */
     background: var(--bg-secondary);
     border-radius: 10px;
     overflow: hidden; 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px var(--shadow-color);
     transition: all 0.3s ease;
-    border: 1px solid var(--text-secondary);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
 }
@@ -330,12 +334,14 @@ section {
 .project-card:hover {
     transform: scale(1.03); 
     border-color: var(--accent-color);
-    box-shadow: 0 0 20px rgba(106, 156, 137, 0.3);
+    /* Adjusted shadow for a lighter background */
+    box-shadow: 0 0 20px rgba(22, 66, 60, 0.2); 
 }
 
 .project-image-wrapper {
     padding: 20px;
-    background: var(--text-primary); 
+    /* Image wrapper color should be primary background to show the image clearly */
+    background: var(--bg-primary); 
     overflow: hidden; 
 }
 
@@ -346,7 +352,7 @@ section {
     object-fit: contain; 
     transition: transform 0.4s ease; 
     border-radius: 5px; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
     display: block; 
 }
 
@@ -357,15 +363,12 @@ section {
 /* Jarak atas section sertifikat */
 /* Menambah jarak di atas section "Certifications & Training" */
 #certificates {
-    margin-top: 120px; /* Menambah margin 120px di atas section ini */
-    /* Padding atas dikembalikan ke nilai default section */
-    /* padding-top: 120px; (Tidak perlu ditulis ulang, sudah ada di aturan 'section' global) */ 
+    margin-top: 120px; 
 }
 
 /* Optional: Sedikit mengurangi padding bawah section sebelumnya (Projects) */
-/* Ini akan membuat jarak total tetap sekitar 240px */
 #projects {
-     padding-bottom: 60px; /* Mengurangi padding bawah section project */
+      padding-bottom: 60px; 
 }
 
 
@@ -383,7 +386,8 @@ section {
 }
 
 .project-card:hover .project-content h3 {
-    color: var(--text-primary); 
+    /* Hover text is still dark green, but text-primary is dark gray/black now */
+    color: var(--accent-color); 
 }
 
 
@@ -406,7 +410,7 @@ section {
 
 .project-links a:hover {
     background: var(--accent-color);
-    color: var(--bg-primary);
+    color: var(--bg-primary); /* Hover background is Dark Green, text is White */
 }
 
 .project-links a i {
@@ -431,13 +435,14 @@ section {
     height: 250px; 
     object-fit: cover; 
     border-radius: 10px; 
-    border: 3px solid var(--text-secondary); 
+    /* Changed border color to the lighter accent color for contrast on white */
+    border: 3px solid var(--accent-color); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .extra-images img:hover {
     transform: scale(1.05); 
-    box-shadow: 0 0 15px rgba(106, 156, 137, 0.4); 
+    box-shadow: 0 0 15px rgba(22, 66, 60, 0.3); 
 }
 
 .extra-text {
@@ -475,13 +480,6 @@ section {
     margin-bottom: 15px;
 }
 
-/* Aturan lama (ikon non-link) dihapus karena semua jadi link */
-/*
-.info-item i { ... }
-.info-item p { ... }
-*/
-
-/* Aturan baru untuk semua link kontak */
 .info-item a.info-link {
     text-decoration: none; 
     color: var(--text-primary); 
@@ -502,7 +500,7 @@ section {
 }
 
 .info-item a.info-link:hover i {
-    color: var(--text-primary); 
+    color: var(--accent-color); 
 }
 
 .info-item a.info-link p {
@@ -516,10 +514,11 @@ section {
     padding: 12px;
     margin-bottom: 15px;
     border-radius: 8px;
-    background: var(--bg-secondary);
+    /* Use lighter secondary background for form fields */
+    background: var(--bg-secondary); 
     color: var(--text-primary);
     font-family: 'Poppins', sans-serif;
-    border: 2px solid var(--text-secondary);
+    border: 2px solid rgba(0, 0, 0, 0.15); /* Light border */
 }
 
 .contact-form input:focus,
@@ -536,9 +535,10 @@ section {
 .footer {
     text-align: center;
     padding: 30px;
-    background: #113832; /* Slightly lighter BG */
+    background: var(--bg-secondary); /* Use secondary background for footer */
     color: var(--text-secondary);
     font-size: 14px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 /* ==== ANIMASI SCROLL FADE-IN ==== */
@@ -556,7 +556,7 @@ section {
 }
 
 
-/* ==== RESPONSIVE DESIGN ==== */
+/* ==== RESPONSIVE DESIGN (No changes needed for color scheme) ==== */
 @media (max-width: 992px) {
     .about-content,
     .contact-content {
