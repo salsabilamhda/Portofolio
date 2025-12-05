@@ -28,13 +28,16 @@ body {
     padding: 0 20px; 
 }
 
+/* --- PERBAIKAN JARAK GLOBAL --- */
 section {
-    padding: 80px 0 80px 0; 
-    min-height: auto; /* Changed from 90vh to auto for better mobile fit */
+    /* Padding diperbesar agar jarak antar section lebih lega */
+    padding: 100px 0; 
+    min-height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    scroll-margin-top: 80px; 
+    /* Memberi jarak scroll agar tidak tertutup header */
+    scroll-margin-top: 100px; 
 }
 
 .section-title {
@@ -303,7 +306,7 @@ section {
     padding: 20px;
     background: var(--bg-primary); 
     overflow: hidden;
-    height: 220px; /* Fixed height for consistency */
+    height: 220px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -532,14 +535,14 @@ section {
 @media (max-width: 768px) {
     /* Navbar Configuration */
     .menu-toggle {
-        display: flex; /* Show Hamburger */
+        display: flex;
         z-index: 1001;
     }
 
     .nav-links {
         position: fixed;
-        top: 70px; /* Below header */
-        right: -100%; /* Hidden by default */
+        top: 70px;
+        right: -100%;
         width: 100%;
         height: calc(100vh - 70px);
         background: var(--bg-primary);
@@ -553,7 +556,7 @@ section {
     }
 
     .nav-links.active {
-        right: 0; /* Slide in */
+        right: 0; 
     }
 
     .nav-links li {
@@ -581,9 +584,21 @@ section {
         font-size: 20px;
     }
 
+    /* --- PERBAIKAN SPACING KHUSUS HP --- */
+    section {
+        /* Tetap memberi padding yang cukup */
+        padding: 80px 0; 
+    }
+
     .section-title {
         font-size: 28px;
         text-align: center;
+        
+        /* Tambahan Margin-Top agar tidak menempel dengan tombol Download CV */
+        margin-top: 40px; 
+        
+        /* Jarak judul ke konten di bawahnya */
+        margin-bottom: 40px; 
     }
 
     .section-title::after {
