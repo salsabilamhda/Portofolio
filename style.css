@@ -28,15 +28,15 @@ body {
     padding: 0 20px; 
 }
 
-/* --- PERBAIKAN JARAK GLOBAL --- */
+/* --- GLOBAL SECTION STYLING & SPACING --- */
 section {
-    /* Padding diperbesar agar jarak antar section lebih lega */
+    /* Padding diperbesar (100px) agar jarak antar section di Desktop lega */
     padding: 100px 0; 
     min-height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Memberi jarak scroll agar tidak tertutup header */
+    /* Memberi jarak scroll agar judul tidak tertutup header */
     scroll-margin-top: 100px; 
 }
 
@@ -506,9 +506,10 @@ section {
     transition: all 0.3s ease;
 }
 
-/* Tablet View */
+/* Tablet View (iPad/Tablets) */
 @media (max-width: 992px) {
     .project-grid {
+        /* Sedikit mengecil untuk tablet */
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
     
@@ -531,18 +532,19 @@ section {
     }
 }
 
-/* Mobile View (Layar HP) */
+/* Mobile View (HP / Screens under 768px) */
 @media (max-width: 768px) {
-    /* Navbar Configuration */
+    
+    /* --- 1. Navbar Logic --- */
     .menu-toggle {
-        display: flex;
+        display: flex; /* Show Hamburger */
         z-index: 1001;
     }
 
     .nav-links {
         position: fixed;
         top: 70px;
-        right: -100%;
+        right: -100%; /* Hidden off-screen */
         width: 100%;
         height: calc(100vh - 70px);
         background: var(--bg-primary);
@@ -556,7 +558,7 @@ section {
     }
 
     .nav-links.active {
-        right: 0; 
+        right: 0; /* Slide in */
     }
 
     .nav-links li {
@@ -564,17 +566,12 @@ section {
     }
 
     /* Hamburger Animation */
-    .menu-toggle.is-active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .menu-toggle.is-active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .menu-toggle.is-active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
-    /* Text & Layout Adjustments */
+
+    /* --- 2. Typography & Spacing Fixes --- */
     .hero-content h1 {
         font-size: 32px;
         line-height: 1.3;
@@ -584,46 +581,98 @@ section {
         font-size: 20px;
     }
 
-    /* --- PERBAIKAN SPACING KHUSUS HP --- */
     section {
-        /* Tetap memberi padding yang cukup */
-        padding: 80px 0; 
+        /* Padding lebih kecil dari desktop, tapi cukup agar tidak sesak */
+        padding: 60px 0; 
     }
 
     .section-title {
-        font-size: 28px;
+        font-size: 26px; /* Judul section sedikit diperkecil */
         text-align: center;
         
-        /* Tambahan Margin-Top agar tidak menempel dengan tombol Download CV */
+        /* FIX: Memberi jarak atas agar tidak mepet dengan konten sebelumnya */
         margin-top: 40px; 
-        
-        /* Jarak judul ke konten di bawahnya */
-        margin-bottom: 40px; 
+        margin-bottom: 30px; 
     }
 
     .section-title::after {
         margin: 10px auto 0 auto;
     }
 
-    .project-grid {
-        grid-template-columns: 1fr; 
+
+    /* --- 3. 2-COLUMN LAYOUT (Projects, Certs, Activities) --- */
+    
+    /* Mengubah grid menjadi 2 kolom */
+    .project-grid, 
+    .skills-grid,
+    .extra-images {
+        grid-template-columns: repeat(2, 1fr); /* 2 Kartu Berdampingan */
+        gap: 15px; /* Jarak antar kartu dirapatkan */
         padding: 0 10px;
     }
+
+    /* Menyesuaikan ukuran kartu agar muat 2 kolom */
+    .project-image-wrapper {
+        height: 120px; /* Tinggi gambar diperkecil */
+        padding: 10px;
+    }
+
+    .project-content {
+        padding: 12px;
+    }
+
+    .project-content h3 {
+        font-size: 14px; /* Font judul project lebih kecil */
+        margin-bottom: 5px;
+        line-height: 1.4;
+    }
+
+    .project-content p {
+        font-size: 11px; /* Deskripsi sangat kecil */
+        line-height: 1.4;
+        margin-bottom: 10px;
+        /* Batasi teks jadi 3 baris lalu titik-titik (...) */
+        display: -webkit-box;
+        -webkit-line-clamp: 3; 
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    /* Menyesuaikan tombol link */
+    .project-links a {
+        padding: 4px 8px;
+        font-size: 10px;
+        margin-right: 5px;
+    }
     
+    .project-links a i {
+        margin-right: 3px;
+    }
+
+    /* Menyesuaikan Skill Box */
+    .skill-box {
+        padding: 15px;
+    }
+    .skill-box i { font-size: 30px; }
+    .skill-box span { font-size: 12px; margin-top: 10px; }
+
+    /* Menyesuaikan Gambar About Me */
+    .extra-images img {
+        height: 150px;
+    }
+
+    /* Contact Form tetap 1 kolom agar mudah diisi */
     .contact-content {
-        gap: 20px;
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 }
 
-/* Small Mobile View */
-@media (max-width: 480px) {
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 10px;
-    }
-    
-    .extra-images {
-        grid-template-columns: 1fr;
+/* Small Mobile View (< 380px) */
+@media (max-width: 380px) {
+    /* Jika layar terlalu sempit, kembalikan ke 1 kolom agar terbaca */
+    .project-grid, .skills-grid {
+        grid-template-columns: 1fr; 
     }
     
     .hero-content h1 {
