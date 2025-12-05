@@ -31,7 +31,7 @@ body {
 /* --- GLOBAL SECTION STYLING & SPACING --- */
 section {
     /* PERBAIKAN 1: Padding diperbesar menjadi 140px agar jarak di desktop lebih lega */
-    padding: 140px 0; 
+    padding: 180px 0; 
     min-height: auto;
     display: flex;
     flex-direction: column;
