@@ -30,13 +30,13 @@ body {
 
 /* --- GLOBAL SECTION STYLING & SPACING --- */
 section {
-    /* Padding diperbesar (100px) agar jarak antar section di Desktop lega */
-    padding: 100px 0; 
+    /* PERBAIKAN 1: Padding diperbesar menjadi 140px agar jarak di desktop lebih lega */
+    padding: 140px 0; 
     min-height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Memberi jarak scroll agar judul tidak tertutup header */
+    /* Sesuaikan juga scroll-margin agar judul tidak tertutup header */
     scroll-margin-top: 100px; 
 }
 
@@ -441,6 +441,13 @@ section {
     transition: color 0.3s ease;
 }
 
+.info-item a.info-link p {
+    margin: 0;
+    color: inherit;
+    /* PERBAIKAN 2: Menambahkan sedikit margin atas agar teks sejajar dengan tengah ikon */
+    margin-top: 3px; 
+}
+
 .contact-form input,
 .contact-form textarea {
     width: 100%;
@@ -582,15 +589,15 @@ section {
     }
 
     section {
-        /* Padding lebih kecil dari desktop, tapi cukup agar tidak sesak */
-        padding: 60px 0; 
+        /* Padding untuk mobile lebih kecil, tapi cukup */
+        padding: 80px 0; 
     }
 
     .section-title {
         font-size: 26px; /* Judul section sedikit diperkecil */
         text-align: center;
         
-        /* FIX: Memberi jarak atas agar tidak mepet dengan konten sebelumnya */
+        /* Jarak atas untuk mobile */
         margin-top: 40px; 
         margin-bottom: 30px; 
     }
